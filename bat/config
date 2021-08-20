@@ -1,0 +1,11 @@
+# set theme
+--theme="Gruvbox Flat Dark"
+
+# show line numbers, git mods and file header
+--style="numbers,changes,header"
+
+# map some syntaxes
+--map-syntax ".py:python"
+
+# use ".gitignore"-style highlighting for ".ignore" files
+--map-syntax ".ignore:Git Ignore"

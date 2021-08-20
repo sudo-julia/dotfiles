@@ -1,0 +1,16 @@
+/*
+!/alacritty/
+!/bat/
+/bat/syntaxes
+!/bspwm/
+!/dunst/
+!/i3/
+!/neofetch/
+!/nvim/
+/nvim/plugin/
+/nvim/spell/
+!/picom/
+!/rofi/
+!/zathura/
+!/zsh/
+!.gitignore
