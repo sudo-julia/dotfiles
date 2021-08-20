@@ -38,6 +38,14 @@ return require('packer').startup(function(use)
 		end
 	}
 
+  use {
+    'folke/trouble.nvim',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = function()
+      require('trouble').setup()
+    end
+  }
+
 	-- syntax
 	use {
 		'nvim-treesitter/nvim-treesitter',
@@ -87,6 +95,17 @@ return require('packer').startup(function(use)
 
 	use 'ggandor/lightspeed.nvim'
 	use 'b3nj5m1n/kommentary'
+	use 'andrejlevkovitch/vim-lua-format'
+	use 'dbeniamine/cheat.sh-vim'
+  use 'LionC/nest.nvim'
+
+  use {
+    'folke/which-key.nvim',
+    config = function()
+      require('which-key').setup()
+    end
+  }
+
 	use {
 		'nvim-telescope/telescope.nvim',
 		requires = { {'nvim-lua/plenary.nvim'} },
@@ -94,8 +113,7 @@ return require('packer').startup(function(use)
 			require('telescope').setup()
 		end
 	}
-	use 'andrejlevkovitch/vim-lua-format'                      -- lua code formatting
-	use 'dbeniamine/cheat.sh-vim'                              -- cheatsheets
+
 	use {
 		'AckslD/nvim-neoclip.lua',
 		config = function()
@@ -105,6 +123,7 @@ return require('packer').startup(function(use)
 				})
 		end
 	}
+
 	use {
 		'ahmedkhalf/project.nvim',
 		config = function()

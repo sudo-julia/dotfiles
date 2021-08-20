@@ -1,4 +1,3 @@
-local lspconfig = require("lspconfig")
 local map = require("utils").map
 
 --- keybindings
@@ -51,7 +50,7 @@ end
 
 --- individual language server setups
 -- python
-lspconfig.pyright.setup {
+require('lspconfig').pyright.setup {
   cmd = { "pyright-langserver", "--stdio" },
   filetypes = { "python" },
   settings = {
@@ -78,7 +77,7 @@ local system_name = "Linux"
 local sumneko_root_path = vim.fn.stdpath("data") .. "/lspinstall/lua/sumneko-lua/extension/server"
 local sumneko_binary = sumneko_root_path .. "/bin/" .. system_name .. "/lua-language-server"
 
-lspconfig.sumneko_lua.setup {
+require('lspconfig').sumneko_lua.setup {
   cmd = { sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
   filetypes = { "lua" },
   settings = {
@@ -106,7 +105,7 @@ lspconfig.sumneko_lua.setup {
 }
 
 -- set up all servers that require no extra configuration
-local servers = { "bashls", "tsserver" }
+local servers = { "bashls" }
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup { on_attach = on_attach }
+  require('lspconfig')[lsp].setup { on_attach = on_attach }
 end
