@@ -1,11 +1,17 @@
 require("nvim-treesitter.configs").setup {
-    highlight = {
-        enable = true
-    },
-    incremental_selection = {
-        enable = true
-    },
-    indent = {
-        enable = true
-    },
+  ensure_installed = {
+    'bash',
+    'lua',
+    'python'
+  },
+  highlight = {
+      enable = true,
+      use_languagetree = true
+  },
+  incremental_selection = {
+      enable = true
+  },
+  indent = {
+      enable = true
+  },
 }

@@ -41,7 +41,10 @@ return require('packer').startup(function(use)
 	-- syntax
 	use {
 		'nvim-treesitter/nvim-treesitter',
-		run = ':TSUpdate'
+		run = ':TSUpdate',
+    config = function()
+      require('plugins.nvim-treesitter')
+    end
 	}
 
 	use {
@@ -53,9 +56,15 @@ return require('packer').startup(function(use)
 	}
 
 	-- general
-	use 'psf/black'                                            -- python code formatting
-	use 'z0mbix/vim-shfmt'                                     -- bash formatting
-	use 'ggandor/lightspeed.nvim'
+	use {
+    'psf/black',
+    ft = {'python'}
+  }
+
+	use {
+    'z0mbix/vim-shfmt',
+    ft = {'bash', 'sh'}
+  }
 
 	use {
 		'nacro90/numb.nvim',
@@ -63,7 +72,20 @@ return require('packer').startup(function(use)
 			require('numb').setup()
 		end
 	}
-	use 'neomake/neomake'                                      -- linting
+
+  use {
+    'mfussenegger/nvim-lint',
+    config = function()
+      require('lint').linters_by_ft = {
+        bash = {'shellcheck'},
+        python = {'flake8', 'mypy', 'pylint'},
+        lua = {'luacheck'},
+        markdown = {'markdownlint'}
+      }
+    end
+  }
+
+	use 'ggandor/lightspeed.nvim'
 	use 'b3nj5m1n/kommentary'
 	use {
 		'nvim-telescope/telescope.nvim',

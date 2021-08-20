@@ -22,8 +22,10 @@ cmd[[au FileType man nnoremap <nowait><expr><buffer> q :exit<CR>]]
 -- python
 --cmd[[au FileType python map <Buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>]]
 
-cmd[[au BufRead,BufWritePre * execute ":Neomake"]] -- run neomake
-cmd[[let &t_ut='']] -- draw term colors or something
+-- TODO (jam) move this to its own file
+cmd[[au BufRead,BufWritePre <buffer> lua require('lint').try_lint()]]
+
+cmd[[let &t_ut='']] -- draw term colors
 
 -- lua
 cmd[[au FileType lua nnoremap <buffer> <c-k> :call LuaFormat()<CR>]]
