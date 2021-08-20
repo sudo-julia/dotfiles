@@ -11,7 +11,9 @@
 /nvim/plugin/
 /nvim/spell/
 !/picom/
+!/polybar/
 !/rofi/
 !/zathura/
 !/zsh/
 !.gitignore
+!README.md
