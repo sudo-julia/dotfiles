@@ -3,8 +3,8 @@ local create_augroup = require("utils").create_augroup
 
 create_augroup(
   {
-    { "BufNewFile,BufRead", "*.md", [[nnoremap d<C-d> ddGpf ;rXA<C-r>=strftime(" <%Y-%m-%d>")<CR><Esc>'']] },
-    { "BufNewFile,BufRead", "*.md", [[nnoremap u<C-u> ddggjpfXr f<hD0]] },
+    { "BufNewFile,BufRead", "*.md", [[nnoremap <silent> d<C-d> ddGpf ;rXA<C-r>=strftime(" <%Y-%m-%d>")<CR><Esc>'']] },
+    { "BufNewFile,BufRead", "*.md", [[nnoremap <silent> u<C-u> ddggjpfXr f<hD0]] },
     { "BufNewFile,BufRead", "*.md", [[let @n="O- [ ] "]] },
     { "BufNewFile,BufRead", "*.md", [[let @a="@n<!--a-->\<Esc>Bi"]] },
   },
