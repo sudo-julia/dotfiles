@@ -26,17 +26,18 @@ return require('packer').startup(function(use)
 	}
 
 	use {
-    'kabouzeid/nvim-lspinstall',
-    event = 'BufRead'
-  }
-
-	use {
 		'neovim/nvim-lspconfig',
-    after = 'nvim-lspinstall',
 		config = function()
-			require('plugins.nvim-lspconfig')
+			require('plugins.lspconfig')
 		end
 	}
+
+	use {
+    'kabouzeid/nvim-lspinstall',
+    config = function()
+      require('lspinstall').setup()
+    end
+  }
 
   use {
     'folke/trouble.nvim',
@@ -51,7 +52,7 @@ return require('packer').startup(function(use)
 		'nvim-treesitter/nvim-treesitter',
 		run = ':TSUpdate',
     config = function()
-      require('plugins.nvim-treesitter')
+      require('plugins.treesitter')
     end
 	}
 
@@ -117,10 +118,7 @@ return require('packer').startup(function(use)
 	use {
 		'AckslD/nvim-neoclip.lua',
 		config = function()
-			require('neoclip').setup({
-					history = 1000,
-					filter = nil,
-				})
+      require('neoclip').setup()
 		end
 	}
 
@@ -148,10 +146,7 @@ return require('packer').startup(function(use)
 		end
 	}
 end)
--- manual setups
--- require('plugins.nvim-lspinstall')
--- require('plugins.tree-sitter')
-
+--
 -- TODO (jam) implement for snippet support in coq
 -- vim.schedule(function ()
 -- 	local lsp = require('lspconfig')
