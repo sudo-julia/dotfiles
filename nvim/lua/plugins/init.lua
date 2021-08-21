@@ -98,7 +98,7 @@ return require('packer').startup(function(use)
 	use 'b3nj5m1n/kommentary'
 	use 'andrejlevkovitch/vim-lua-format'
 	use 'dbeniamine/cheat.sh-vim'
-  use 'LionC/nest.nvim'
+  -- use 'LionC/nest.nvim'
 
   use {
     'folke/which-key.nvim',

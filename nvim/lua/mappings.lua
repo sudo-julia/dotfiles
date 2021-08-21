@@ -39,5 +39,11 @@ map('n', '<Leader>fh', '<Cmd>lua require("telescope.builtin").help_tags()<Cr>')
 map('n', '<Leader>fm', '<Cmd>lua require("telescope.builtin").man_pages()<Cr>')
 map('n', '<Leader>ft', '<Cmd>lua require("telescope.builtin").treesitter()<Cr>')
 
--- trouble settings
+---- trouble settings
 
+map('n', '<Leader>xx', '<Cmd>Trouble<Cr>')
+map('n', '<Leader>xw', '<Cmd>Trouble lsp_workspace_diagnostics<Cr>')
+map('n', '<Leader>xd', '<Cmd>Trouble lsp_document_diagnostics<Cr>')
+map('n', '<Leader>xl', '<Cmd>Trouble loclist<Cr>')
+map('n', '<Leader>xq', '<Cmd>Trouble quickfix<Cr>')
+map('n', '<Leader>gR', '<Cmd>Trouble lsp_references<Cr>')
