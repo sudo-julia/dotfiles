@@ -10,7 +10,7 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec alacritty --working-directory "${HOME}"
 
-# TODO get this working
+# TODO: get this working
 # start a terminal from the current working dir
 # bindsym $mod+Shift+Return exec alacritty --working-directory ./
 

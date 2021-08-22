@@ -64,6 +64,8 @@ return require('packer').startup(function(use)
 		end
 	}
 
+  use 'https://tildegit.org/sloum/gemini-vim-syntax'
+
 	-- general
 	use {
     'psf/black',
@@ -98,7 +100,16 @@ return require('packer').startup(function(use)
 	use 'b3nj5m1n/kommentary'
 	use 'andrejlevkovitch/vim-lua-format'
 	use 'dbeniamine/cheat.sh-vim'
-  -- use 'LionC/nest.nvim'
+  use {
+    'gelguy/wilder.nvim',
+		run = ':UpdateRemotePlugins'
+  }
+
+  vim.cmd[[call wilder#setup({'modes': [':', '/', '?']})]]
+  vim.cmd[[
+    call wilder#set_option('renderer', wilder#popupmenu_renderer({'highlighter': wilder#basic_highlighter(),}))
+  ]]
+  -- use 'LionC/nest.nvim' ]]
 
   use {
     'folke/which-key.nvim',
@@ -146,8 +157,8 @@ return require('packer').startup(function(use)
 		end
 	}
 end)
---
--- TODO (jam) implement for snippet support in coq
+
+-- TODO: (jam) implement for snippet support in coq
 -- vim.schedule(function ()
 -- 	local lsp = require('lspconfig')
 -- 	require('packer').loader('coq_nvim coq.artifacts')

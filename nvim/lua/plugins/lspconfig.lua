@@ -1,5 +1,5 @@
 local map = require('utils').map
-local lspconfig = require('lspconfig') 
+local lspconfig = require('lspconfig')
 
 --- keybindings
 local on_attach = function(client, bufnr)
@@ -25,14 +25,14 @@ local on_attach = function(client, bufnr)
   map("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>")
   map("n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>")
 
-  -- Set some keybinds conditional on server capabilities
+  --[[ -- Set some keybinds conditional on server capabilities
   if client.resolved_capabilities.document_formatting then
     map("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>")
   end
   if client.resolved_capabilities.document_range_formatting then
     map("v", "<space>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>")
   end
-
+ ]]
   -- Set autocommands conditional on server_capabilities
   if client.resolved_capabilities.document_highlight then
     vim.api.nvim_exec([[
@@ -48,14 +48,12 @@ local on_attach = function(client, bufnr)
   end
 end
 
---- individual language server setups
--- python
+lspconfig.bashls.setup {
+  filetypes = {'bash', 'sh'}
+}
+
 lspconfig.pyright.setup {
   settings = {
-    pyright = {
-      disableLanguageServices = false,
-      disableOrganizeImports = false,
-    },
     python = {
       pythonPath = '/usr/bin/python3',
       venvPath = '/home/jam/lib/cache/pypoetry/virtualenvs',
@@ -67,10 +65,9 @@ lspconfig.pyright.setup {
   on_attach = on_attach
 }
 
--- lua
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, 'lua/?.lua')
-table.insert(runtime_path, 'lua/?/init.lua') 
+table.insert(runtime_path, 'lua/?/init.lua')
 
 lspconfig.sumneko_lua.setup {
   cmd = { vim.fn.stdpath('data') .. '/lspinstall/lua/sumneko-lua-language-server' };

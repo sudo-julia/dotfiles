@@ -348,8 +348,8 @@ foreign_link = "#d3869b"
 link_number = "#DDC7A1"
 regular_text = "#D4BE98"
 quote_text = "#7C6F64"
-preformatted_text = "#D4BE98" # TODO (jam) change
-list_text = "#D4BE98" # TODO (jam) change
+preformatted_text = "#D4BE98" # TODO: (jam) change
+list_text = "#D4BE98" # TODO: (jam) change
 
 # btn_bg: The bg color for all modal buttons
 # btn_text: The text color for all modal buttons

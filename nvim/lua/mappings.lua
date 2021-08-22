@@ -10,7 +10,7 @@ vim.g.mapleader = ' '                            -- map leader key
 map('i', '<C-y>', "<Esc>gg'+yG:wq<CR>")
 map('n', '<C-y>', "gg'+yG:wq<CR>")
 
--- TODO (jam) get nest working
+-- TODO: (jam) get nest working
 --[[ -- switch between windows
 nest.applyKeymaps {
   { '<Leader>', {
@@ -40,10 +40,14 @@ map('n', '<Leader>fm', '<Cmd>lua require("telescope.builtin").man_pages()<Cr>')
 map('n', '<Leader>ft', '<Cmd>lua require("telescope.builtin").treesitter()<Cr>')
 
 ---- trouble settings
-
 map('n', '<Leader>xx', '<Cmd>Trouble<Cr>')
 map('n', '<Leader>xw', '<Cmd>Trouble lsp_workspace_diagnostics<Cr>')
 map('n', '<Leader>xd', '<Cmd>Trouble lsp_document_diagnostics<Cr>')
 map('n', '<Leader>xl', '<Cmd>Trouble loclist<Cr>')
 map('n', '<Leader>xq', '<Cmd>Trouble quickfix<Cr>')
 map('n', '<Leader>gR', '<Cmd>Trouble lsp_references<Cr>')
+
+---- todo-comments
+map('n', '<Leader>tt', '<Cmd>TodoTelescope<Cr>')
+
+map('n', '<Leader>wk', '<Cmd>WhichKey<Cr>')
