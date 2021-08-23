@@ -1,10 +1,9 @@
 local map = require('utils').map
 
-map('i', 'jk', '<Esc>')                          -- jk to escape
-map('n', '<F4>', ':set hlsearch! hlsearch?<CR>') -- toggle highlights
-map('n', '<F5>', ':Black<CR>')                   -- format code
-map('n', 'Y', 'y$')                              -- 'Y' matches behavior of 'C', 'D'
-vim.g.mapleader = ' '                            -- map leader key
+map('i', 'jk', '<Esc>') -- jk to escape
+map('n', '<F4>', ':set hlsearch! hlsearch?<CR>', {noremap = true, silent = true}) -- toggle highlights
+map('n', 'Y', 'y$') -- 'Y' matches behavior of 'C', 'D'
+vim.g.mapleader = ' ' -- map leader key
 
 -- yank buffer to clipboard
 map('i', '<C-y>', "<Esc>gg'+yG:wq<CR>")
@@ -38,6 +37,12 @@ map('n', '<Leader>fg', '<Cmd>lua require("telescope.builtin").live_grep()<Cr>')
 map('n', '<Leader>fh', '<Cmd>lua require("telescope.builtin").help_tags()<Cr>')
 map('n', '<Leader>fm', '<Cmd>lua require("telescope.builtin").man_pages()<Cr>')
 map('n', '<Leader>ft', '<Cmd>lua require("telescope.builtin").treesitter()<Cr>')
+
+---- formatter
+map('n', '<Leader>fo', '<Cmd>Format<Cr>')
+
+---- neoclip
+map('n', '<Leader>cl', '<Cmd>Telescope neoclip<Cr>')
 
 ---- trouble settings
 map('n', '<Leader>xx', '<Cmd>Trouble<Cr>')

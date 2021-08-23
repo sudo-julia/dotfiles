@@ -4,10 +4,10 @@ local cmd = vim.cmd
 local indent = 4
 --
 -- quality of life settings
-cmd[[highlight BadWhitespace ctermbg=red]]
+cmd [[highlight BadWhitespace ctermbg=red]]
 
 -- quality of life
---o.clipboard = 'unnamed,unamedplus'
+-- o.clipboard = 'unnamed,unamedplus'
 o.backupcopy = 'yes'
 o.cmdheight = 2
 o.cursorcolumn = true
@@ -39,7 +39,7 @@ o.softtabstop = indent
 o.tabstop = indent
 
 -- highlight on yank
-cmd[[au TextYankPost * lua vim.highlight.on_yank {on_visual = false}]]
+cmd [[au TextYankPost * lua vim.highlight.on_yank {on_visual = false}]]
 
 -- colorscheme
 o.termguicolors = true
@@ -47,10 +47,9 @@ g.gruvbox_italic_comments = false
 g.gruvbox_italic_keywords = false
 g.gruvbox_colors = {bg = '#282828'}
 g.gruvbox_flat_style = 'dark'
-cmd[[colorscheme gruvbox-flat]]
+cmd [[colorscheme gruvbox-flat]]
 
 -- plugins
 -- o.shortmess:append('c')
 g.coq_settings = {auto_start = true}
 g.python3_host_prog = '/usr/bin/python3'
-g.shfmt_fmt_on_save = 1
