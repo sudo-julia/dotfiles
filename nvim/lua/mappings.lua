@@ -53,6 +53,6 @@ map('n', '<Leader>xq', '<Cmd>Trouble quickfix<Cr>')
 map('n', '<Leader>gR', '<Cmd>Trouble lsp_references<Cr>')
 
 ---- todo-comments
-map('n', '<Leader>tt', '<Cmd>TodoTelescope<Cr>')
+map('n', '<Leader>to', '<Cmd>TodoTelescope<Cr>')
 
 map('n', '<Leader>wk', '<Cmd>WhichKey<Cr>')

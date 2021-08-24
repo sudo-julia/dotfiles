@@ -1,5 +1,6 @@
 local map = require('utils').map
 local lspconfig = require('lspconfig')
+local coq = require('coq')
 
 --- keybindings
 local on_attach = function(client, bufnr)
@@ -7,7 +8,7 @@ local on_attach = function(client, bufnr)
 
   buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
-	-- mappings
+  -- mappings
   map("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>")
   map("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>")
   map("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>")
@@ -15,7 +16,8 @@ local on_attach = function(client, bufnr)
   map("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>")
   map("n", "<space>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>")
   map("n", "<space>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>")
-  map("n", "<space>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>")
+  map("n", "<space>wl",
+      "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>")
   map("n", "<space>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>")
   map("n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>")
   map("n", "<space>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>")
@@ -48,52 +50,43 @@ local on_attach = function(client, bufnr)
   end
 end
 
-lspconfig.bashls.setup {
-  filetypes = {'bash', 'sh'}
-}
-
-lspconfig.pyright.setup {
+lspconfig.pyright.setup(coq.lsp_ensure_capabilities({
   settings = {
     python = {
       pythonPath = '/usr/bin/python3',
       venvPath = '/home/jam/lib/cache/pypoetry/virtualenvs',
-      analysis = {
-        useLibraryCodeForTypes = true,
-      }
+      analysis = {useLibraryCodeForTypes = true}
     }
   },
   on_attach = on_attach
-}
+}))
 
-local runtime_path = vim.split(package.path, ';')
-table.insert(runtime_path, 'lua/?.lua')
-table.insert(runtime_path, 'lua/?/init.lua')
+do
+  local sumneko_root_path = vim.fn.stdpath('data') .. '/lsp_servers/lua'
+  local sumneko_binary = sumneko_root_path .. '/bin/Linux/lua-language-server'
 
-lspconfig.sumneko_lua.setup {
-  cmd = { vim.fn.stdpath('data') .. '/lspinstall/lua/sumneko-lua-language-server' };
-  settings = {
-    Lua = {
-      runtime = {
-        path = runtime_path
-      },
-      diagnostics = {
-        globals = {'vim'},
-      },
-      workspace = {
-        library = {
-          library = vim.api.nvim_get_runtime_file("", true)
-        }
-      },
-      telemetry = {
-        enable = false,
+  local runtime_path = vim.split(package.path, ';')
+  table.insert(runtime_path, 'lua/?.lua')
+  table.insert(runtime_path, 'lua/?/init.lua')
+
+  lspconfig.sumneko_lua.setup(coq.lsp_ensure_capabilities({
+    cmd = {sumneko_binary, '-E', sumneko_root_path .. '/main.lua'},
+    settings = {
+      Lua = {
+        runtime = {path = runtime_path},
+        diagnostics = {globals = {'vim'}},
+        workspace = {
+          library = {library = vim.api.nvim_get_runtime_file("", true)}
+        },
+        telemetry = {enable = false}
       }
-    }
-  },
-  on_attach = on_attach
-}
+    },
+    on_attach = on_attach
+  }))
+end
 
 -- set up all servers that require no extra configuration
-local servers = {'bashls'}
+local servers = {'bashls', 'jsonls', 'vimls', 'yamlls'}
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup({ on_attach = on_attach })
+  lspconfig[lsp].setup(coq.lsp_ensure_capabilities({on_attach = on_attach}))
 end

@@ -50,6 +50,6 @@ g.gruvbox_flat_style = 'dark'
 cmd [[colorscheme gruvbox-flat]]
 
 -- plugins
--- o.shortmess:append('c')
+o.shortmess:append('c')
 g.coq_settings = {auto_start = true}
 g.python3_host_prog = '/usr/bin/python3'
