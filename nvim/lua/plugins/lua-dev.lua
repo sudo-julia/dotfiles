@@ -1,5 +1,4 @@
-local on_attach = require('plugins.lspconfig').on_attach
-
+-- local on_attach = require('plugins.lspconfig').on_attach
 local sumneko_root_path = vim.fn.stdpath('data') .. '/lsp_servers/lua'
 local sumneko_binary = sumneko_root_path .. '/bin/Linux/lua-language-server'
 
@@ -18,8 +17,7 @@ local luadev = require('lua-dev').setup {
         },
         telemetry = {enable = false}
       }
-    },
-    on_attach = on_attach
+    }
   }
 }
 

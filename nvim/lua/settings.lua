@@ -29,6 +29,7 @@ o.spellcapcheck = ''
 o.splitbelow = true
 o.splitright = true
 o.textwidth = 88
+o.updatetime = 300
 o.wildmenu = true
 
 -- tab settings
@@ -37,9 +38,6 @@ o.smartindent = true
 o.smarttab = true
 o.softtabstop = indent
 o.tabstop = indent
-
--- highlight on yank
-cmd [[au TextYankPost * lua vim.highlight.on_yank {on_visual = false}]]
 
 -- colorscheme
 o.termguicolors = true

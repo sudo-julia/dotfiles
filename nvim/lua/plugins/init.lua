@@ -89,8 +89,6 @@ return require('packer').startup(function(use)
 
   use {'ggandor/lightspeed.nvim', 'b3nj5m1n/kommentary'}
 
-  -- use 'LionC/nest.nvim'
-
   --- show available key bindings
   use {
     'folke/which-key.nvim',

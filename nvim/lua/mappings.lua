@@ -5,22 +5,16 @@ map('n', '<F4>', ':set hlsearch! hlsearch?<CR>', {noremap = true, silent = true}
 map('n', 'Y', 'y$') -- 'Y' matches behavior of 'C', 'D'
 vim.g.mapleader = ' ' -- map leader key
 
+-- swtich buffers
+map('n', '<Leader>bn', ':bn<Cr>')
+map('n', '<Leader>bp', ':bp<Cr>')
+map('n', '<Leader>bd', ':bd<Cr>')
+
 -- yank buffer to clipboard
 map('i', '<C-y>', "<Esc>gg'+yG:wq<CR>")
 map('n', '<C-y>', "gg'+yG:wq<CR>")
 
--- TODO: (jam) get nest working
---[[ -- switch between windows
-nest.applyKeymaps {
-  { '<Leader>', {
-    { '<Cr', '<C-w>w' },
-    { 'h', '<C-w>h' },
-    { 'j', '<C-w>j' },
-    { 'k', '<C-w>k' },
-    { 'l', '<C-w>l' },
-  }}
-}
- ]]
+-- switch windows
 map('n', '<Leader><Cr>', '<C-w>w')
 map('n', '<Leader>h', '<C-w>h')
 map('n', '<Leader>j', '<C-w>j')

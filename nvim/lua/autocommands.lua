@@ -29,7 +29,10 @@ create_augroup({{'BufWritePost', '*.bash,*.lua,*.py,*.sh', 'FormatWrite'}},
 -- TODO: (jam) move this to its own file
 cmd [[au BufRead,BufWritePost <buffer> lua require('lint').try_lint()]]
 
-cmd [[let &t_ut='']] -- draw term colors
+cmd [[let &t_ut='']]
+cmd [[au TextYankPost * lua vim.highlight.on_yank({on_visual = false})]]
+-- show diagnostics when a cursor is stopped on a line
+cmd [[au CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()]]
 
 -- update packer on new plugin file
 cmd("au BufWritePost " .. vim.fn.stdpath('config') ..

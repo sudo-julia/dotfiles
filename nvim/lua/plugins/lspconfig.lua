@@ -23,8 +23,8 @@ local on_attach = function(client, bufnr)
   map("n", "<space>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>")
   map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>")
   map("n", "<space>e", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>")
-  map("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>")
-  map("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>")
+  map("n", "g[", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>")
+  map("n", "g]", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>")
   map("n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>")
 
   --[[ -- Set some keybinds conditional on server capabilities
@@ -50,17 +50,6 @@ local on_attach = function(client, bufnr)
   end
 end
 
-lspconfig.pyright.setup(coq.lsp_ensure_capabilities({
-  settings = {
-    python = {
-      pythonPath = '/usr/bin/python3',
-      venvPath = '/home/jam/lib/cache/pypoetry/virtualenvs',
-      analysis = {useLibraryCodeForTypes = true}
-    }
-  },
-  on_attach = on_attach
-}))
-
 do
   local sumneko_root_path = vim.fn.stdpath('data') .. '/lsp_servers/lua'
   local sumneko_binary = sumneko_root_path .. '/bin/Linux/lua-language-server'
@@ -84,6 +73,23 @@ do
     on_attach = on_attach
   }))
 end
+
+lspconfig.pyright.setup(coq.lsp_ensure_capabilities({
+  settings = {
+    python = {
+      pythonPath = '/usr/bin/python3',
+      venvPath = '/home/jam/lib/cache/pypoetry/virtualenvs',
+      analysis = {useLibraryCodeForTypes = true}
+    }
+  },
+  on_attach = on_attach
+}))
+
+lspconfig.rls.setup(coq.lsp_ensure_capabilities({
+  cmd = {'rustup', 'run', 'stable', 'rls'},
+  settings = {rust = {all_features = true}},
+  on_attach = on_attach
+}))
 
 -- set up all servers that require no extra configuration
 local servers = {'bashls', 'jsonls', 'vimls', 'yamlls'}

@@ -146,8 +146,8 @@ scrollbar = "auto"
 # bind_add_bookmark
 # bind_save
 # bind_reload
-# bind_back
-# bind_forward
+bind_back = "H"
+bind_forward = "L"
 # bind_pgup
 # bind_pgdn
 # bind_new_tab
@@ -334,7 +334,7 @@ entries_per_page = 20
 # list_text
 
 bg = "#282828"
-tab_num = "#89B482"
+tab_num = "#7DAEA3"
 tab_divider = "#D4BE98"
 bottombar_label = "#7DAEA3"
 bottombar_text = "#D4BE98"
@@ -351,8 +351,8 @@ quote_text = "#7C6F64"
 preformatted_text = "#D4BE98" # TODO: (jam) change
 list_text = "#D4BE98" # TODO: (jam) change
 
-# btn_bg: The bg color for all modal buttons
-# btn_text: The text color for all modal buttons
+btn_bg = "#ffffff"
+btn_text = "#ffffff"
 
 # dl_choice_modal_bg
 # dl_choice_modal_text
