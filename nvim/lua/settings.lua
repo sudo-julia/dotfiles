@@ -4,11 +4,11 @@ local cmd = vim.cmd
 local indent = 4
 --
 -- quality of life settings
-cmd [[highlight BadWhitespace ctermbg=red]]
+cmd([[highlight BadWhitespace ctermbg=red]])
 
 -- quality of life
 -- o.clipboard = 'unnamed,unamedplus'
-o.backupcopy = 'yes'
+o.backupcopy = "yes"
 o.cmdheight = 2
 o.cursorcolumn = true
 o.cursorline = true
@@ -22,14 +22,14 @@ o.scrolloff = 2
 o.shiftround = true
 o.showcmd = true
 o.showmatch = true
-o.signcolumn = 'yes'
+o.signcolumn = "yes"
 o.smartcase = true
 o.spell = true
-o.spellcapcheck = ''
+o.spellcapcheck = ""
 o.splitbelow = true
 o.splitright = true
 o.textwidth = 88
-o.updatetime = 300
+o.updatetime = 400
 o.wildmenu = true
 
 -- tab settings
@@ -43,11 +43,11 @@ o.tabstop = indent
 o.termguicolors = true
 g.gruvbox_italic_comments = false
 g.gruvbox_italic_keywords = false
-g.gruvbox_colors = {bg = '#282828'}
-g.gruvbox_flat_style = 'dark'
-cmd [[colorscheme gruvbox-flat]]
+g.gruvbox_colors = { bg = "#282828" }
+g.gruvbox_flat_style = "dark"
+cmd([[colorscheme gruvbox-flat]])
 
 -- plugins
-o.shortmess:append('c')
-g.coq_settings = {auto_start = true}
-g.python3_host_prog = '/usr/bin/python3'
+o.shortmess:append("c")
+g.coq_settings = { auto_start = true }
+g.python3_host_prog = "/usr/bin/python3"

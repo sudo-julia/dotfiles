@@ -93,7 +93,7 @@ modules-right = memory cpu temperature
 [bar/solo]
 monitor = DP-0
 inherit = bar/jambar
-modules-left = i3 wlan pac-updates
+modules-left = i3 wlan eth pac-updates
 modules-center = tilde mullvad-status todo-checks dunst-status tilde 
 modules-right = xbacklight alsa battery cpu temperature date 
 

@@ -1,7 +1,10 @@
-require('lint').linters_by_ft = {
-  bash = {'shellcheck'},
-  lua = {'luacheck'},
-  markdown = {'markdownlint'},
-  python = {'flake8', 'mypy', 'pylint'},
-  sh = {'shellcheck'}
+require("lint").linters_by_ft = {
+	bash = { "shellcheck" },
+	c = { "clangtidy", "cppcheck" },
+	lua = { "luacheck" },
+	markdown = { "markdownlint" },
+	python = { "flake8", "mypy", "pylint" },
+	sh = { "shellcheck" },
 }
+
+vim.cmd([[au BufRead,BufWritePost <buffer> lua require('lint').try_lint()]])
