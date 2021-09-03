@@ -49,5 +49,5 @@ cmd([[colorscheme gruvbox-flat]])
 
 -- plugins
 o.shortmess:append("c")
-g.coq_settings = { auto_start = true }
+g.coq_settings = { auto_start = "shut-up" }
 g.python3_host_prog = "/usr/bin/python3"

@@ -14,7 +14,7 @@ require("formatter").setup({
 						"--assume-filename",
 						vim.api.nvim_buf_get_name(0),
 						"--style",
-						"Webkit",
+						"LLVM",
 					},
 					stdin = true,
 					cwd = vim.fn.expand("%:p:h"),
