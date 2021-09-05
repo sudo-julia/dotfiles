@@ -21,6 +21,21 @@ require("formatter").setup({
 				}
 			end,
 		},
+		cpp = {
+			function()
+				return {
+					exe = "clang-format",
+					args = {
+						"--assume-filename",
+						vim.api.nvim_buf_get_name(0),
+						"--style",
+						"LLVM",
+					},
+					stdin = true,
+					cwd = vim.fn.expand("%:p:h"),
+				}
+			end,
+		},
 		lua = {
 			function()
 				return { exe = "stylua", args = { "-s", "-" }, stdin = true }
@@ -28,7 +43,7 @@ require("formatter").setup({
 		},
 		python = {
 			function()
-				return { exe = "black", stdin = true }
+				return { exe = "black", args = { "-" }, stdin = true }
 			end,
 		},
 		rust = {

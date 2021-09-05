@@ -40,3 +40,5 @@ cmd([[au TextYankPost * lua vim.highlight.on_yank({on_visual = false})]])
 
 -- update packer on new plugin file
 cmd("au BufWritePost " .. vim.fn.stdpath("config") .. "/plugins/init.lua source <afile> | PackerCompile")
+
+vim.cmd([[au CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]])

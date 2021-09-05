@@ -16,6 +16,7 @@ o.expandtab = true
 o.hidden = true
 o.ignorecase = true
 o.number = true
+g.python3_host_prog = "/usr/bin/python3"
 o.relativenumber = true
 o.ruler = true
 o.scrolloff = 2
@@ -24,7 +25,7 @@ o.showcmd = true
 o.showmatch = true
 o.signcolumn = "yes"
 o.smartcase = true
-o.spell = true
+-- o.spell = true
 o.spellcapcheck = ""
 o.splitbelow = true
 o.splitright = true
@@ -48,6 +49,7 @@ g.gruvbox_flat_style = "dark"
 cmd([[colorscheme gruvbox-flat]])
 
 -- plugins
-o.shortmess:append("c")
-g.coq_settings = { auto_start = "shut-up" }
-g.python3_host_prog = "/usr/bin/python3"
+o.shortmess:append("c") -- any completion plugin
+g.coq_settings = { auto_start = "shut-up" } -- coq
+-- g.nvim_tree_update_cwd = 1 -- project
+-- g.nvim_tree_respect_buf_cwd = 1 -- project

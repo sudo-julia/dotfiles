@@ -58,6 +58,8 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	use("kosayoda/nvim-lightbulb")
+
 	-- syntax
 	--- faster and better code highlighting/indenting
 	use({
@@ -134,6 +136,15 @@ return require("packer").startup(function(use)
 		"ahmedkhalf/project.nvim",
 		config = function()
 			require("project_nvim").setup()
+		end,
+	})
+
+	--- spellchecking with treesitter
+	use({
+		"lewis6991/spellsitter.nvim",
+		requires = "nvim-treesitter/nvim-treesitter",
+		config = function()
+			require("spellsitter").setup()
 		end,
 	})
 

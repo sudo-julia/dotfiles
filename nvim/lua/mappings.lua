@@ -50,3 +50,14 @@ map("n", "<Leader>gR", "<Cmd>Trouble lsp_references<Cr>")
 map("n", "<Leader>to", "<Cmd>TodoTelescope<Cr>")
 
 map("n", "<Leader>wk", "<Cmd>WhichKey<Cr>")
+
+---- code actions
+map("n", "<Leader>ca", "<Cmd>lua vim.lsp.buf.code_action()<Cr>")
+-- FIXME:
+--[[ map(
+	"n",
+	"<Leader>cr",
+	"<Cmd>lua require('telescope.builtin').lsp_range_code_actions({start_line = 1}, {end_line = "
+		.. vim.api.nvim_buf_line_count(0)
+		.. "})<Cr>"
+) ]]
