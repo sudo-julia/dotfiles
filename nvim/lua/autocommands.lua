@@ -5,9 +5,9 @@ create_augroup({
 	{
 		"BufNewFile,BufRead",
 		"*.md",
-		[[nnoremap <silent> d<C-d> ddGpf ;rXA<C-r>=strftime(" <%Y-%m-%d>")<CR><Esc>'']],
+		[[nnoremap <silent> <Leader>d ddGpf ;rXA<C-r>=strftime(" <%Y-%m-%d>")<CR><Esc>'']],
 	},
-	{ "BufNewFile,BufRead", "*.md", [[nnoremap <silent> u<C-u> ddggjpfXr f<hD0]] },
+	{ "BufNewFile,BufRead", "*.md", [[nnoremap <silent> <Leader>u ddggjpfXr f<hD0]] },
 	{ "BufNewFile,BufRead", "*.md", [[let @n="O- [ ] "]] },
 	{ "BufNewFile,BufRead", "*.md", [[let @a="@n<!--a-->\<Esc>Bi"]] },
 }, "md_macros")
@@ -17,7 +17,7 @@ cmd([[highlight BadWhitespace ctermbg=12]]) -- create badwhitespace group
 cmd([[au BufRead,BufNewFile * match BadWhitespace /\s\+$/]]) -- pt 2 of above
 cmd([[au FileType bash,markdown setlocal shiftwidth=2 tabstop=2 softtabstop=2]]) -- bash tab settings
 cmd([[au FileType c setlocal cindent cinoptions=2 sw=2 sts=2 ts=2]])
-cmd([[au FileType lua setlocal shiftwidth=2 tabstop=2 softtabstop=2]]) -- bash tab settings
+cmd([[au FileType lua setlocal shiftwidth=2 tabstop=2 softtabstop=2]])
 cmd([[au FileType man nnoremap <nowait><expr><buffer> q :exit<CR>]])
 
 -- formatter
@@ -41,4 +41,4 @@ cmd([[au TextYankPost * lua vim.highlight.on_yank({on_visual = false})]])
 -- update packer on new plugin file
 cmd("au BufWritePost " .. vim.fn.stdpath("config") .. "/plugins/init.lua source <afile> | PackerCompile")
 
-vim.cmd([[au CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]])
+-- vim.cmd([[au CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb()]])

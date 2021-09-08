@@ -58,7 +58,8 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	use("kosayoda/nvim-lightbulb")
+	-- use("kosayoda/nvim-lightbulb") -- removed until the plugin author updates to the
+	-- new handler signature #15504
 
 	-- syntax
 	--- faster and better code highlighting/indenting
