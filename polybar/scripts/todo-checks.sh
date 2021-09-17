@@ -11,7 +11,7 @@ update_module() {
 	echo "${newest_mod}" >"${last_file}"
 	working="$(grep -cs -- '<!--a-->$' "${todo_file}")"
 	todo="$(grep -cs -- '^- \[ \]' "${todo_file}")"
-	complete="$(grep -cs -- '^- \[X\]' "${todo_file}")"
+	complete="$(grep -cs -- '^- \[x\]' "${todo_file}")"
 	if ((working != 0)); then
 		if ((todo > 10)); then
 			echo "! ${working}  * ${todo}  X ${complete}"

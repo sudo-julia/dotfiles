@@ -23,6 +23,7 @@ map("n", "<Leader>l", "<C-w>l")
 
 -- terminal
 map("t", "<C-[>", [[<C-\><C-n>]])
+map("t", "jk", [[<C-\><C-n>]])
 
 ---- telescope settings
 map("n", "<Leader>fb", '<Cmd>lua require("telescope.builtin").buffers()<Cr>')
@@ -61,3 +62,6 @@ map("n", "<Leader>ca", "<Cmd>lua vim.lsp.buf.code_action()<Cr>")
 		.. vim.api.nvim_buf_line_count(0)
 		.. "})<Cr>"
 ) ]]
+
+---- CHADtree
+map("n", "<Leader>ch", "<Cmd>CHADopen<Cr>")

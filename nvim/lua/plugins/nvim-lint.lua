@@ -1,10 +1,13 @@
 require("lint").linters_by_ft = {
 	bash = { "shellcheck" },
 	c = { "clangtidy", "cppcheck" },
-	html = { "tidy" },
+	css = { "stylelint" },
+	html = { "stylelint", "tidy" },
+	js = { "eslint" },
+	latex = { "chktex" },
 	lua = { "luacheck" },
 	markdown = { "markdownlint" },
-	python = { "flake8", "mypy", "pylint" },
+	python = { "flake8", "pylint" }, -- add mypy back sometime
 	sh = { "shellcheck" },
 }
 

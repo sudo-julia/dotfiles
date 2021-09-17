@@ -12,22 +12,7 @@ require("formatter").setup({
 					exe = "clang-format",
 					args = {
 						"--assume-filename",
-						vim.api.nvim_buf_get_name(0),
-						"--style",
-						"LLVM",
-					},
-					stdin = true,
-					cwd = vim.fn.expand("%:p:h"),
-				}
-			end,
-		},
-		cpp = {
-			function()
-				return {
-					exe = "clang-format",
-					args = {
-						"--assume-filename",
-						vim.api.nvim_buf_get_name(0),
+						vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)),
 						"--style",
 						"LLVM",
 					},
@@ -57,8 +42,33 @@ require("formatter").setup({
 					args = {
 						"--stdin-filepath",
 						vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)),
-						"--tab-width",
-						4,
+					},
+					stdin = true,
+				}
+			end,
+		},
+		json = {
+			function()
+				return {
+					exe = "prettier",
+					args = {
+						"--stdin-filepath",
+						vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)),
+						"--parser",
+						"json",
+					},
+					stdin = true,
+				}
+			end,
+		},
+		javascript = {
+			function()
+				return {
+					exe = "prettier",
+					args = {
+						"--stdin-filepath",
+						vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)),
+						"--single-quote",
 					},
 					stdin = true,
 				}
@@ -67,6 +77,20 @@ require("formatter").setup({
 		lua = {
 			function()
 				return { exe = "stylua", args = { "-s", "-" }, stdin = true }
+			end,
+		},
+		markdown = {
+			function()
+				return {
+					exe = "prettier",
+					args = {
+						"--stdin-filepath",
+						vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)),
+						"--parser",
+						"markdown",
+					},
+					stdin = true,
+				}
 			end,
 		},
 		python = {
@@ -81,7 +105,21 @@ require("formatter").setup({
 		},
 		sh = {
 			function()
-				return { exe = "shfmt", args = { "-sp" }, stdin = true }
+				return { exe = "shfmt", args = { "-p" }, stdin = true }
+			end,
+		},
+		yaml = {
+			function()
+				return {
+					exe = "prettier",
+					args = {
+						"--stdin-filepath",
+						vim.fn.fnameescape(vim.api.nvim_buf_get_name(0)),
+						"--parser",
+						"yaml",
+					},
+					stdin = true,
+				}
 			end,
 		},
 	},

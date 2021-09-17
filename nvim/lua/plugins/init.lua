@@ -49,15 +49,6 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	--- development with neovim api
-	use({
-		"folke/lua-dev.nvim",
-		ft = { "lua" },
-		config = function()
-			require("plugins.lua-dev")
-		end,
-	})
-
 	-- use("kosayoda/nvim-lightbulb") -- removed until the plugin author updates to the
 	-- new handler signature #15504
 
@@ -65,7 +56,6 @@ return require("packer").startup(function(use)
 	--- faster and better code highlighting/indenting
 	use({
 		"nvim-treesitter/nvim-treesitter",
-		run = ":TSUpdate",
 		config = function()
 			require("plugins.treesitter")
 		end,
@@ -170,5 +160,12 @@ return require("packer").startup(function(use)
 		config = function()
 			require("plugins.lualine")
 		end,
+	})
+
+	--- file manager
+	use({
+		"ms-jpq/chadtree",
+		branch = "chad",
+		run = "python3 -m chadtree deps",
 	})
 end)

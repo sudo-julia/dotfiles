@@ -10,4 +10,10 @@ telescope.setup({
 			n = { ["<C-t>"] = trouble.open_with_trouble },
 		},
 	},
+	pickers = {
+		find_files = {
+			previewer = true,
+		},
+	},
+	file_previewer = require("telescope.previewers").vim_buffer_bat.new,
 })

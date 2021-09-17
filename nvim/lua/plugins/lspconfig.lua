@@ -95,8 +95,12 @@ lspconfig.rls.setup(coq.lsp_ensure_capabilities({
 	on_attach = on_attach,
 }))
 
+lspconfig.texlab.setup(coq.lsp_ensure_capabilities({
+	filetypes = { "tex", "bib", "latex" },
+}))
+
 -- set up all servers that require no extra configuration
-local servers = { "bashls", "clangd", "jsonls", "vimls", "yamlls" }
+local servers = { "bashls", "clangd", "jsonls", "texlab", "tsserver", "vimls", "yamlls" }
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup(coq.lsp_ensure_capabilities({ on_attach = on_attach }))
 end
