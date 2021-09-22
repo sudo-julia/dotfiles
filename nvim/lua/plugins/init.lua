@@ -61,6 +61,8 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	use({ "https://tildegit.org/sloum/gemini-vim-syntax" })
+
 	--- easily check TODOs
 	use({
 		"folke/todo-comments.nvim",

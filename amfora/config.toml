@@ -143,7 +143,7 @@ scrollbar = "auto"
 # bind_edit
 # bind_home
 # bind_bookmarks
-# bind_add_bookmark
+bind_add_bookmark = "b"
 # bind_save
 # bind_reload
 bind_back = "H"
@@ -340,7 +340,7 @@ bottombar_label = "#7DAEA3"
 bottombar_text = "#D4BE98"
 bottombar_bg = "#1d2021"
 scrollbar = "#D4BE98"
-hdg_1 = "#EA6962"
+hdg_1 = "#E78A4E"
 hdg_2 = "#7DAEA3"
 hdg_3 = "#A9B665"
 amofora_link = "#89B482"
@@ -348,20 +348,20 @@ foreign_link = "#d3869b"
 link_number = "#DDC7A1"
 regular_text = "#D4BE98"
 quote_text = "#7C6F64"
-preformatted_text = "#D4BE98" # TODO: (jam) change
-list_text = "#D4BE98" # TODO: (jam) change
+preformatted_text = "#D8A657"
+list_text = "#EA6962"
 
-btn_bg = "#ffffff"
-btn_text = "#ffffff"
+btn_bg = "#32302F"
+btn_text = "#DDC7A1"
 
 # dl_choice_modal_bg
 # dl_choice_modal_text
 # dl_modal_bg
 # dl_modal_text
-# info_modal_bg
-# info_modal_text
-# error_modal_bg
-# error_modal_text
+info_modal_bg = "#32302F"
+info_modal_text = "#DDC7A1"
+error_modal_bg = "#32302F"
+error_modal_text = "#C14A4A"
 # yesno_modal_bg
 # yesno_modal_text
 # tofu_modal_bg
