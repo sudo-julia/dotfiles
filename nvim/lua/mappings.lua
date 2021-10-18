@@ -65,3 +65,5 @@ map("n", "<Leader>ca", "<Cmd>lua vim.lsp.buf.code_action()<Cr>")
 
 ---- CHADtree
 map("n", "<Leader>ch", "<Cmd>CHADopen<Cr>")
+
+map("n", "<Leader>tw", "<Cmd>Twilight<Cr>")

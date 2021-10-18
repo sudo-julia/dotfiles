@@ -7,11 +7,11 @@ cmd([[au BufRead,BufNewFile * match BadWhitespace /\s\+$/]]) -- pt 2 of above
 cmd([[au FileType bash,css,html,markdown,lua setlocal shiftwidth=2 tabstop=2 softtabstop=2]])
 cmd([[au FileType c setlocal cindent cinoptions=2 sw=2 sts=2 ts=2]])
 cmd([[au FileType man nnoremap <nowait><expr><buffer> q :exit<CR>]])
-cmd([[au FileType text setlocal spell]])
+cmd([[au FileType gmi,text setlocal spell tw=0]])
 
 -- formatter
 create_augroup({
-	{ "BufWritePost", "*.bash,*.c,*.css,*.html,*.js,*.json,*.lua,*.py,*.rs,*.sh,*.yml,*.yaml", "FormatWrite" },
+	{ "BufWritePost", "*.bash,*.c,*.css,*.html,*.js,*.json,*.lua,*.md,*.py,*.rs,*.sh,*.yml,*.yaml", "FormatWrite" },
 }, "formatter.nvim")
 
 -- python

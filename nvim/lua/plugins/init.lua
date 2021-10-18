@@ -156,6 +156,14 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	--- dim inactive portions of code
+	use({
+		"folke/twilight.nvim",
+		config = function()
+			require("twilight").setup()
+		end,
+	})
+
 	--- quick statusline
 	use({
 		"hoob3rt/lualine.nvim",
