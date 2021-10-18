@@ -1,18 +1,17 @@
-do
-	local fn = vim.fn
+local fn = vim.fn
 
-	-- packer bootstrap
-	local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+-- packer bootstrap
+local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 
-	if fn.empty(fn.glob(install_path)) > 0 then
-		fn.system({
-			"git",
-			"clone",
-			"https://github.com/wbthomason/packer.nvim",
-			install_path,
-		})
-		vim.api.nvim_command("packadd packer.nvim")
-	end
+if fn.empty(fn.glob(install_path)) > 0 then
+	PACKER_BOOTSTRAP = fn.system({
+		"git",
+		"clone",
+		"--depth",
+		"1",
+		"https://github.com/wbthomason/packer.nvim",
+		install_path,
+	})
 end
 
 vim.cmd([[packadd packer.nvim]])
@@ -96,7 +95,15 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	use({ "ggandor/lightspeed.nvim", "b3nj5m1n/kommentary" })
+	-- commenting
+	use({
+		"numToStr/Comment.nvim",
+		config = function()
+			require("Comment").setup()
+		end,
+	})
+
+	use({ "ggandor/lightspeed.nvim" })
 
 	--- show available key bindings
 	use({
@@ -178,4 +185,8 @@ return require("packer").startup(function(use)
 		branch = "chad",
 		run = "python3 -m chadtree deps",
 	})
+
+	if PACKER_BOOTSTRAP then
+		require("packer").sync()
+	end
 end)
