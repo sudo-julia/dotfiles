@@ -48,9 +48,6 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	-- use("kosayoda/nvim-lightbulb") -- removed until the plugin author updates to the
-	-- new handler signature #15504
-
 	-- syntax
 	--- faster and better code highlighting/indenting
 	use({
@@ -103,7 +100,12 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	use({ "ggandor/lightspeed.nvim" })
+	use({
+		"ggandor/lightspeed.nvim",
+		config = function()
+			require("lightspeed").setup()
+		end,
+	})
 
 	--- show available key bindings
 	use({
@@ -173,7 +175,7 @@ return require("packer").startup(function(use)
 
 	--- quick statusline
 	use({
-		"hoob3rt/lualine.nvim",
+		"nvim-lualine/lualine.nvim",
 		config = function()
 			require("plugins.lualine")
 		end,

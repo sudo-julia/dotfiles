@@ -5,6 +5,7 @@
 /bat/syntaxes
 !/bspwm/
 !/dunst/
+!flake8
 !/i3/
 !/neofetch/
 !/nvim/
@@ -13,6 +14,7 @@
 !/picom/
 !/polybar/
 !/rofi/
+!/sxhkd/
 !/zathura/
 !/zsh/
 !.gitignore
