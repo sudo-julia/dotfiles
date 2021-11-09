@@ -100,12 +100,7 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	use({
-		"ggandor/lightspeed.nvim",
-		config = function()
-			require("lightspeed").setup()
-		end,
-	})
+	-- use({ "ggandor/lightspeed.nvim" })
 
 	--- show available key bindings
 	use({
@@ -145,9 +140,15 @@ return require("packer").startup(function(use)
 	use({
 		"lewis6991/spellsitter.nvim",
 		requires = "nvim-treesitter/nvim-treesitter",
+		run = ":TSUpdate",
 		config = function()
 			require("spellsitter").setup()
 		end,
+	})
+
+	use({
+		"nvim-treesitter/playground",
+		requires = "nvim-treesitter/nvim-treesitter",
 	})
 
 	--- faster startup, will be merged eventually

@@ -7,7 +7,7 @@ require("nvim-treesitter.configs").setup({
 	},
 	highlight = {
 		enable = true,
-		disable = { "vim" },
+		disable = { "python", "vim" },
 		-- use_languagetree = true,
 	},
 	incremental_selection = {
