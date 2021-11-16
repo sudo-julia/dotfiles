@@ -38,7 +38,6 @@ else
 	alias la='ls -al'
 fi
 alias ip='ip -c'
-alias jrnl='note --note_dir "${HOME}/documents/personal/journal/" -f "txt"'
 alias lsblk='lsblk -ip'
 alias maim='maim -m 10'
 alias mlvd='mullvad'

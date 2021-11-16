@@ -104,6 +104,10 @@ get-audio() {
 	youtube-dl -x --audio-format best "$1"
 }
 
+jrnl() {
+    note --note_dir "${HOME}/documents/personal/journal" -f "txt" "$@"
+}
+
 # get mimetype of a file
 mt() {
     xdg-mime query filetype "$1"
@@ -116,22 +120,13 @@ mkcd() {
 }
 
 # neovim - formatter plugin spams stderr so this fixes it
-function n() {
+n() {
     nvim "$@" 2>/dev/null
 }
 
 # build python project in current dir
 pybuild() {
 	python3 './setup.py' sdist bdist_wheel
-}
-
-# initialize a python dev directory
-pyinit() {
-    local full_path="$( readlink -m "$1" )"
-    pydir "${full_path}/${1}" \
-    && mkdir "${full_path}/tests" \
-    && touch "${full_path}/tests/__init__.py" \
-    && touch "${full_path}/${1}/__init__.py"
 }
 
 # install a python package through pip
@@ -149,6 +144,10 @@ remove-history-duplicates() {
 	gawk -i inplace '!x[$0]++' "${HISTFILE}"
 }
 
+tmpnote() {
+    note --note_dir "/tmp" "$@"
+}
+
 ## plugin management with zinit for speed
 source "${HOME}/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
@@ -159,10 +158,12 @@ zinit ice wait lucid atload'_zsh_autosuggest_start'
 zinit light zsh-users/zsh-autosuggestions
 zinit for \
 	light-mode zsh-users/zsh-autosuggestions \
-	light-mode zdharma/fast-syntax-highlighting \
-    light-mode _local/cursor_mode
+	light-mode zdharma-continuum/fast-syntax-highlighting \
     # light-mode skywind3000/z.lua \
     
+zinit ice depth=1
+zinit light jeffreytse/zsh-vi-mode
+export ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
 
 
 # use compinit cache if available

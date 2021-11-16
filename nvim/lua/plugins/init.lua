@@ -17,6 +17,7 @@ end
 vim.cmd([[packadd packer.nvim]])
 
 return require("packer").startup(function(use)
+	require("impatient")
 	-- require("impatient") -- to load in plugins faster
 	use("wbthomason/packer.nvim")
 
@@ -57,7 +58,7 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	use({ "https://tildegit.org/sloum/gemini-vim-syntax" })
+	use({ "https://tildegit.org/sloum/gemini-vim-syntax", "Xe/lolcode.vim" })
 
 	--- easily check TODOs
 	use({
@@ -99,8 +100,6 @@ return require("packer").startup(function(use)
 			require("Comment").setup()
 		end,
 	})
-
-	-- use({ "ggandor/lightspeed.nvim" })
 
 	--- show available key bindings
 	use({
@@ -147,12 +146,11 @@ return require("packer").startup(function(use)
 	})
 
 	use({
-		"nvim-treesitter/playground",
-		requires = "nvim-treesitter/nvim-treesitter",
+		"alaviss/nim.nvim",
+		ft = { "nim" },
 	})
 
-	--- faster startup, will be merged eventually
-	-- use({ "lewis6991/impatient.nvim", rocks = "mpack" })
+	use("lewis6991/impatient.nvim")
 
 	-- looks
 	--- fav colorscheme so far
