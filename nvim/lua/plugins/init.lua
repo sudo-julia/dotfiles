@@ -77,19 +77,12 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	--- manage linters
+	--- linter and formatters
 	use({
-		"mfussenegger/nvim-lint",
+		"jose-elias-alvarez/null-ls.nvim",
+		requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 		config = function()
-			require("plugins.nvim-lint")
-		end,
-	})
-
-	--- manage formatters
-	use({
-		"mhartington/formatter.nvim",
-		config = function()
-			require("plugins.formatter")
+			require("plugins.null-ls")
 		end,
 	})
 
@@ -143,11 +136,6 @@ return require("packer").startup(function(use)
 		config = function()
 			require("spellsitter").setup()
 		end,
-	})
-
-	use({
-		"alaviss/nim.nvim",
-		ft = { "nim" },
 	})
 
 	use("lewis6991/impatient.nvim")

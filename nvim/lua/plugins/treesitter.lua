@@ -2,8 +2,12 @@ require("nvim-treesitter.configs").setup({
 	ensure_installed = {
 		"bash",
 		"c",
+		"json",
 		"lua",
 		"python",
+		"toml",
+		"vim",
+		"yaml",
 	},
 	highlight = {
 		enable = true,

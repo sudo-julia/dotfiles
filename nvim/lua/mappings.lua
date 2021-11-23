@@ -34,7 +34,7 @@ map("n", "<Leader>fm", '<Cmd>lua require("telescope.builtin").man_pages()<Cr>')
 map("n", "<Leader>ft", '<Cmd>lua require("telescope.builtin").treesitter()<Cr>')
 
 ---- formatter
-map("n", "<Leader>fo", "<Cmd>Format<Cr>")
+map("n", "<Leader>fo", "<Cmd>lua vim.lsp.buf.formatting()<Cr>")
 
 ---- neoclip
 map("n", "<Leader>cl", "<Cmd>Telescope neoclip<Cr>")
