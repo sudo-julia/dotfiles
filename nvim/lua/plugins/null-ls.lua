@@ -7,7 +7,7 @@ null_ls.config({
 	sources = {
 		diagnostics.cppcheck,
 		diagnostics.eslint,
-		diagnostics.flake8,
+		diagnostics.flake8.with({ extra_args = { "--append-config", vim.fn.expand("~/.config/flake8") } }),
 		diagnostics.golangci_lint,
 		diagnostics.luacheck,
 		diagnostics.markdownlint,

@@ -5,15 +5,13 @@ require("lualine").setup({
 		-- section_separators = '|',
 		theme = "gruvbox-flat",
 	},
+	-- this is pretty close to the default config, but i'm listing everything explicitly
 	sections = {
-		lualine_c = {
-			{ "diagnostics", sources = { "nvim_lsp" } },
-			{ "filename", path = 1 },
-		},
-		lualine_x = {
-			{ "encoding" },
-			{ "fileformat", icons_enabled = false },
-			{ "filetype" },
-		},
+		lualine_a = { "mode" },
+		lualine_b = { "branch", "diff", { "diagnostics", sources = { "nvim_lsp" } } },
+		lualine_c = { { "filename", path = 1 } },
+		lualine_x = { "encoding", "filetype" },
+		lualine_y = { "progress" },
+		lualine_z = { "location" },
 	},
 })
