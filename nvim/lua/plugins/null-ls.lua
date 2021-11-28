@@ -11,6 +11,7 @@ null_ls.config({
 		diagnostics.golangci_lint,
 		diagnostics.luacheck,
 		diagnostics.markdownlint,
+		diagnostics.mypy.with({ extra_args = { "--ignore-missing-imports" } }),
 		diagnostics.pylint,
 		diagnostics.shellcheck.with({ filetypes = { "bash", "sh" } }),
 		diagnostics.stylelint,

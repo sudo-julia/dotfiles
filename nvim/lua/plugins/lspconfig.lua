@@ -4,6 +4,9 @@ local on_attach = require("plugins.on_attach").on_attach
 local on_attach_no_format = require("plugins.on_attach").on_attach_no_format
 
 -- server confs
+lspconfig.clangd.setup(coq.lsp_ensure_capabilities({
+	on_attach = on_attach_no_format,
+}))
 
 lspconfig.gopls.setup(coq.lsp_ensure_capabilities({
 	on_attach = on_attach_no_format,
@@ -52,7 +55,7 @@ lspconfig.rls.setup(coq.lsp_ensure_capabilities({
 }))
 
 -- set up all servers that require no extra configuration
-local servers = { "bashls", "clangd", "jsonls", "tsserver", "vimls", "yamlls" }
+local servers = { "bashls", "jsonls", "tsserver", "vimls", "yamlls" }
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup(coq.lsp_ensure_capabilities({ on_attach = on_attach }))
 end
