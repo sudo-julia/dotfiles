@@ -41,14 +41,14 @@ M.on_attach = function(client, bufnr)
       hi LspReferenceWrite cterm=bold ctermbg=red guibg=LightYellow
       augroup lsp_document_highlight
         autocmd! * <buffer>
-        autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-        autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
       augroup END
     ]],
 			false
 		)
 	end
 end
+-- autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+-- autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
 
 -- TODO: there's definitely a way to do this with variables
 M.on_attach_no_format = function(client, bufnr)
