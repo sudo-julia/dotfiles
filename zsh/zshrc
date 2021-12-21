@@ -159,12 +159,7 @@ zinit light zsh-users/zsh-autosuggestions
 zinit for \
 	light-mode zsh-users/zsh-autosuggestions \
 	light-mode zdharma-continuum/fast-syntax-highlighting \
-    # light-mode skywind3000/z.lua \
-    
-zinit ice depth=1
-zinit light jeffreytse/zsh-vi-mode
-export ZVM_VI_INSERT_ESCAPE_BINDKEY=jk
-
+    light-mode _local/cursor-mode
 
 # use compinit cache if available
 autoload -Uz compinit

@@ -9,15 +9,6 @@ cmd([[au FileType c setlocal cindent cinoptions=8 sw=8 ts=8 sts=8]])
 cmd([[au FileType man nnoremap <nowait><expr><buffer> q :exit<CR>]])
 cmd([[au FileType gmi,text setlocal spell tw=0]])
 
--- formatter
---[[ create_augroup({
-	{
-		"BufWritePost",
-		"*.bash,*.c,*.css,*.go,*.html,*.js,*.json,*.lua,*.md,*.py,*.rs,*.sh,*.yml,*.yaml",
-		"FormatWrite",
-	},
-}, "formatter.nvim") ]]
-
 -- python
 -- cmd[[au FileType python map <Buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>]]
 
