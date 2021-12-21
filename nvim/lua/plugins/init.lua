@@ -38,7 +38,10 @@ return require("packer").startup(function(use)
 	})
 
 	--- better installer for lsps
-	use({ "williamboman/nvim-lsp-installer", requires = "neovim/nvim-lspconfig" })
+	use({
+		"williamboman/nvim-lsp-installer",
+		requires = "neovim/nvim-lspconfig",
+	})
 
 	--- diagnostic manager
 	use({
@@ -80,7 +83,7 @@ return require("packer").startup(function(use)
 	--- linter and formatters
 	use({
 		"jose-elias-alvarez/null-ls.nvim",
-		requires = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+		requires = { "nvim-lua/plenary.nvim" },
 		config = function()
 			require("plugins.null-ls")
 		end,

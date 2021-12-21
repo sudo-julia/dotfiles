@@ -1,9 +1,8 @@
 local null_ls = require("null-ls")
-local on_attach = require("plugins.on_attach").on_attach
 local diagnostics = null_ls.builtins.diagnostics
 local formatting = null_ls.builtins.formatting
 
-null_ls.config({
+null_ls.setup({
 	sources = {
 		diagnostics.cppcheck,
 		diagnostics.eslint,
@@ -26,8 +25,4 @@ null_ls.config({
 		formatting.shfmt.with({ extra_args = { "-i", "2", "-ci", "-p" }, filetypes = { "bash", "sh" } }),
 		formatting.stylua,
 	},
-})
-
-require("lspconfig")["null-ls"].setup({
-	on_attach = on_attach,
 })

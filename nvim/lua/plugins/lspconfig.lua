@@ -54,8 +54,12 @@ lspconfig.rls.setup(coq.lsp_ensure_capabilities({
 	on_attach = on_attach,
 }))
 
+lspconfig.tsserver.setup(coq.lsp_ensure_capabilities({
+	on_attach = on_attach_no_format,
+}))
+
 -- set up all servers that require no extra configuration
-local servers = { "bashls", "jsonls", "tsserver", "vimls", "yamlls" }
+local servers = { "bashls", "cssls", "html", "jsonls", "vimls", "yamlls" }
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup(coq.lsp_ensure_capabilities({ on_attach = on_attach }))
 end
