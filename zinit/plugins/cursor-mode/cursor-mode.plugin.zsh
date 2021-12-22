@@ -18,7 +18,7 @@ if [[ ${zsh_loaded_plugins[-1]} != */cursor-mode && -z ${fpath[(r)${0:h}]} ]] {
 typeset -gA Plugins
 Plugins[CURSOR_MODE_DIR]="${0:h}"
 
-autoload -Uz example-script
+# autoload -Uz example-script
 
 # Use alternate vim marks [[[ and ]]] as the original ones can
 # confuse nested substitutions, e.g.: ${${${VAR}}}
