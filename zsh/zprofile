@@ -32,4 +32,5 @@ export XINITRC="${LIB}/xinitrc"
 export WEECHAT_HOME="${XDG_CONFIG_HOME}/weechat"
 export WINEPREFIX="${LIB}/wine"
 export WWW_HOME="${XDG_CONFIG_HOME}/w3m"
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#4E5659,bg=underline"
 bash /usr/bin/tdm

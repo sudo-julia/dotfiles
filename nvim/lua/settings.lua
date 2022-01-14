@@ -53,3 +53,6 @@ o.shortmess:append("c") -- any completion plugin
 g.coq_settings = { auto_start = "shut-up" } -- coq
 -- g.nvim_tree_update_cwd = 1 -- project
 -- g.nvim_tree_respect_buf_cwd = 1 -- project
+
+-- experimental filetype.lua setting
+g.do_filetype_lua = 1

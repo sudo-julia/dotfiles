@@ -53,32 +53,65 @@ font:
     x: 0
     y: 0
 
-colors:
-  primary:
-    background: "0x282828"
-    foreground: "0xfff4e1"
-
-  normal:
-    black: "0x707172"
-    red: "0xf899b9"
-    green: "0xaed49b"
-    yellow: "0xfbd588"
-    blue: "0xafc4e9"
-    magenta: "0xe2d2f9"
-    cyan: "0xaaf4db"
-    white: "0xeaeaea"
-
-  bright:
-    black: "0x5d5d5d"
-    red: "0xf96f9d"
-    green: "0x85d45d"
-    yellow: "0xffc144"
-    blue: "0x7da1f5"
-    magenta: "0xce7ef8"
-    cyan: "0x76ebc5"
-    white: "0xfff8ec"
+# colors:
+#   primary:
+#     background: "0x282828"
+#     foreground: "0xfff4e1"
+#
+#   normal:
+#     black: "0x707172"
+#     red: "0xf899b9"
+#     green: "0xaed49b"
+#     yellow: "0xfbd588"
+#     blue: "0xafc4e9"
+#     magenta: "0xe2d2f9"
+#     cyan: "0xaaf4db"
+#     white: "0xeaeaea"
+#
+#   bright:
+#     black: "0x5d5d5d"
+#     red: "0xf96f9d"
+#     green: "0x85d45d"
+#     yellow: "0xffc144"
+#     blue: "0x7da1f5"
+#     magenta: "0xce7ef8"
+#     cyan: "0x76ebc5"
+#     white: "0xfff8ec"
 
     #hints:
+
+# gruvbox Alacritty Colors
+colors:
+  # Default colors
+  primary:
+    background: '0x1d2021'
+    foreground: '0xd4be98'
+
+  # Normal colors
+  normal:
+    black:   '0x37393a'
+    red:     '0xea6962'
+    green:   '0xa9b665'
+    yellow:  '0xd8a657'
+    blue:    '0x7daea3'
+    magenta: '0xd3869b'
+    aqua:    '0x89b482'
+    white:   '0xd4be98'
+
+  # Bright colors
+  bright:
+    black:   '0x17191a'
+    red:     '0xea8580'
+    green:   '0xadb681'
+    yellow:  '0xd8b378'
+    blue:    '0x95bdb4'
+    magenta: '0xe994ab'
+    aqua:    '0x96c58f'
+    white:   '0xd4c8b2'
+
+  indexed_colors:
+    - { index: 16, color: '0xe78a4e' }
+    - { index: 17, color: '0xc14a4a' }
 
 # Visual Bell
 #
