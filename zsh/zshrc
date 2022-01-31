@@ -35,7 +35,7 @@ unsetopt beep
 # light yellow, light reds
 # PROMPT='%B%F{magenta}%n %2~%f%b %F{yellow}☭  %f%F{red}❥ %(?..[%?])%f '
 # light yellow, light heart, bold exit code
- PROMPT='%B%F{white}%n%f %F{magenta}%2~%f%b %F{yellow}☭  %f%F{red}❥ %f%F{#f96f9d}%(?..[%?])%f '
+PROMPT='%B%F{white}%n%f %F{magenta}%2~%f%b %F{yellow}☭  %f%F{red}❥ %f%F{#f96f9d}%(?..[%?])%f '
 # bold yellow, light heart, bold exit code
 #PROMPT='%B%F{magenta}%n %2~%f%b %F{#ffc144}☭  %f%F{red}❥ %f%F{#f96f9d}%(?..[%?])%f '
 RPROMPT='[%D{%T}]'

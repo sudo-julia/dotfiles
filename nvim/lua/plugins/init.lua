@@ -98,12 +98,12 @@ return require("packer").startup(function(use)
 	})
 
 	--- show available key bindings
-	use({
-		"folke/which-key.nvim",
-		config = function()
-			require("which-key").setup()
-		end,
-	})
+	-- use({
+	-- 	"folke/which-key.nvim",
+	-- 	config = function()
+	-- 		require("which-key").setup()
+	-- 	end,
+	-- })
 
 	--- fuzzy finding menu
 	use({
