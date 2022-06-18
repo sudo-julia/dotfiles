@@ -14,7 +14,7 @@ tell_status() {
 }
 
 # format mullvad status to a better looking printable format
-mullvad_status="$( mullvad status | cut -d' ' -f3 )"
+mullvad_status="$( mullvad status | awk '{print $1}' )"
 
 # when a network connection is down, mullvad reports status as "Blocked:",
 # which ruins consistent formatting. this is a quick fix
